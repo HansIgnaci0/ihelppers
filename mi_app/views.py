@@ -12,3 +12,5 @@ def trabaja_con_nosotros(request):
     return render(request, 'mi_app/tcn.html')
 def login(request):
     return render(request, 'mi_app/login.html')
+def sesion(request):
+    return render(request, 'mi_app/sesion.html')
