@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        {% if postulante %}
+        <h2>Agregar postulacion</h2>
+        <form action="modPostulante" method="POST">
+            {% csrf_token %}
+
+            <pre>Nombre: <input type="text" name="nombre_post"></pre>
+            <pre>Correo: <input type="mail" name="correo_post"></pre>
+            <pre>Numero: <input type="text" name="numero_post"></pre>
+            <pre>Ocupacion: <input type="text" name="ocupacion_post"></pre>
+
+            <input type="submit" name="opcion" value="Agregar">
+        </form> <br><br>
+        <a href="{% url 'crud' %}"> Volver </a>
+        <br>
+        <div id="idMensajes">
+            {% if mensaje %}
+            {{mensaje}}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

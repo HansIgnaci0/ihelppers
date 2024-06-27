@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Listado de postulaciones</h1>
+    <br>{% for postulacion in postulaciones %}
+    {{postulacion.nombre_post}},
+    {{postulacion.correo_post}},
+    {{postulacion.numero_post}},
+    {{postulacion.ocupacion_post}}</br>
+    {% endfor%}
+</body>
+</html>

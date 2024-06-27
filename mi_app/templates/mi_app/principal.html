@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ar5hcrE/7c0clHt5Elij4jfk8V/5os5aF0"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iHelppers</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'Css/Generalstyle.css' %}">
+</head>
+<header>
+  <div class="header d-flex justify-content-between align-items-center p-3">
+      <p style="margin-left: 45%; font-size: 30px;"><span class="azul">i</span>Helppers</p>
+      <a href="{% url 'login' %}" class="cta">
+          <span>Login</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+            <path d="M1,5 L11,5"></path>
+            <polyline points="8 1 12 5 8 9"></polyline>
+          </svg>
+        </a>
+        
+  </div>
+</header>
+
+<body>
+    <nav>
+      <a href="{% url 'home' %}">Inicio</a>
+      <a href="{% url 'cotizar' %}">Cotizar</a>
+      <a href="{% url 'equipo' %}">Equipo</a>
+      <a href="{% url 'trabaja_con_nosotros' %}">Trabaja con nosotros</a>
+    </nav>
+    <img src="https://fundacionconfemetal.com/wp-content/uploads/elementor/thumbs/programacion_web_banner-piuowmm7p8grg5ti7sn5kf2ysy2up7e07tthr518q8.jpg"
+        width="100%" height="500px" alt="banner">
+    
+        <div class="card text-center text-bg-dark mb-3">
+            <div class="card-header">
+              <h1><span class="azul">i</span>Helppers</h1>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center">Realizamos tareas de programación</h5> 
+              <p class="card-text">Nos encargamos de realizar el código que necesites para tus trabajos, tareas y/o proyectos;</p>
+            <p>Contamos actualmente con un pequeño grupo de especialistas en código a tu disposición.</p>
+              <p>No esperes más, quítate ese peso de encima </p>
+              <a href="{% url 'cotizar' %}"class="btn btn-primary">Cotiza con nosotros</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+              2 days ago
+            </div>
+          </div>
+          <h1 style="text-align: center;color: azure;">Algunos de los lenguajes que dominamos</h1>
+    <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://www.softzone.es/app/uploads-softzone.es/2020/09/Programar-Java.jpg" class="d-block w-100" alt="Java" width="100%">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Java</h5>
+                  <b>Creación de motores de procesamiento de datos que pueden trabajar con conjuntos de datos complejos y cantidades masivas de datos en tiempo real.</b>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://www.azulweb.net/wp-content/uploads/2020/01/port.jpg" class="d-block w-100" alt="Python">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Python</h5>
+                  <b>Utilizado en las aplicaciones web, el desarrollo de software, la ciencia de datos y el machine learning.</b>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="https://programacion.net/files/article/article_02174_.jpg" class="d-block w-100" alt="HTML">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>HTML</h5>
+                  <b> Describir la estructura básica de una página y organizar la forma en que se mostrará su contenido.</b>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+    </div>
+    
+    <footer style="background-color: #080808; color: white; text-align: center; padding: 20px;">
+      <p>&copy; 2024 iHelppers. Todos los derechos reservados.</p>
+      <p>Contacto: info@ihelppers.com | Teléfono: +123456789</p>
+  </footer>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/663e1a5b07f59932ab3e32db/1hth9dtv6';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+</body>
+
+</html>
