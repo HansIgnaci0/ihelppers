@@ -36,19 +36,19 @@ def delPostulante(request,pk):
         mensaje="postulante eliminado con exito."
         postulantes=postulante.objects.all()
         context = {'postulantes':postulantes, 'mensaje':mensaje}
-        return render(request,'mi_app/delPostulante.html',context)
+        return render(request,'mi_app/crud.html',context)
     except:
         mensaje="postulante no encontrado"
         postulantes=postulante.objects.all()
         context = {'postulantes':postulantes, 'mensaje':mensaje}
-        return render(request,'mi_app/delPostulante.html',context)
+        return render(request,'mi_app/crud.html',context)
 
 def modPostulante(request,pk):
     if pk != "":
         postulante=postulacion.objects.get(nombre_post=pk)
         context={'postulante':postulante}
         if postulante:
-            return render(request,'mi_app/modPostulante.html',context)
+            return render(request,'mi_app/modPostulante.html/',context)
         else:
             context={'mensaje':"Error, postulante no encontrado"}
-            return render(request,'mi_app/delPostulante.html',context)
+            return render(request,'mi_app/crud.html/',context)
