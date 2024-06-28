@@ -36,7 +36,7 @@ def addPostulante(request):
         postulante.save()
         mensaje="postulante agregado con exito."
         context={'mensaje':mensaje}
-        return render(request,'mi_app/addPostulante.html',context)
+        return render(request,'mi_app/tcn.html',context)
 def delPostulante(request,pk):
     context={}
     try:
