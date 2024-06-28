@@ -9,13 +9,13 @@
     <div style="text-align: center;">
         {% if postulante %}
         <h2>Modificar postulacion</h2>
-        <form action="modPostulante" method="POST">
+        <form action="{% url 'modPostulante' %}" method="POST">
             {% csrf_token %}
 
-            <pre>Nombre: <input type="text" name="nombre_post"></pre>
-            <pre>Correo: <input type="mail" name="correo_post"></pre>
-            <pre>Numero: <input type="text" name="numero_post"></pre>
-            <pre>Ocupacion: <input type="text" name="ocupacion_post"></pre>
+            <pre>Nombre: {{postulante.nombre_post}}</pre>
+            <pre>Correo: <input type="mail" name="correo_post" value="{{postulante.correo_post}}"></pre>
+            <pre>Numero: <input type="text" name="numero_post" value="{{postulante.numero_post}}"></pre>
+            <pre>Ocupacion: <input type="text" name="ocupacion_post" value="{{postulante.ocupacion_post}}"></pre>
 
             <input type="submit" name="opcion" value="Actualizar">
         </form> <br><br>

@@ -71,11 +71,12 @@ def modPostulante(request):
         numero_post=request.POST.get('numero_post')
         correo_post=request.POST.get('correo_post')
         ocupacion_post=request.POST.get('ocupacion_post')
-        postulante=postulacion.objects.get(nombre_post=nombre_post)
+        postulante=postulacion()
+        postulante.nombre_post=nombre_post
         postulante.numero_post=numero_post
         postulante.correo_post=correo_post
         postulante.ocupacion_post=ocupacion_post
         postulante.save()
         mensaje="postulante modificado con exito."
         context={'mensaje':mensaje}
-        return render(request,'mi_app/modPostulante.html',context)
+        return render(request,'mi_app/crud.html',context)
