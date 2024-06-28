@@ -12,5 +12,6 @@ urlpatterns = [
     path('crud/',views.crud,name='crud'),
     path('addPostulante/', views.addPostulante, name='addPostulante'),
     path('delPostulante/<str:pk>', views.delPostulante, name='delPostulante'),
-    path('modPostulante/<str:pk>', views.modPostulante, name='modPostulante'),
+    path('findPostulante/<str:pk>', views.findPostulante, name='findPostulante'),
+    path('modPostulante/', views.modPostulante, name='modPostulante'),
 ]

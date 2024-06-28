@@ -17,8 +17,9 @@
         <td> {{postulacion.correo_post}}
         <td> {{postulacion.numero_post}}
         <td> {{postulacion.ocupacion_post}}
-        <td> <a href="{% url 'modPostulante' pk=postulacion.nombre_post%}">Modificar</a>
+        <td> <a href="{% url 'findPostulante' pk=postulacion.nombre_post%}">Modificar</a>
         <td> <a href="{% url 'delPostulante' pk=postulacion.nombre_post%}">Eliminar</a>
+        <br>
     </tr>
     {% endfor%}
 </body>

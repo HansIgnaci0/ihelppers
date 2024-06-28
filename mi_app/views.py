@@ -25,14 +25,14 @@ def sesion(request):
     return render(request, 'mi_app/sesion.html')
 
 def addPostulante(request):
-    if request.method is not "POST":
+    if request.method != "POST":
         return render(request, 'mi_app/addPostulante.html')
     else:
-        nombre_post=request.POST('nombre_post')
-        apellido_post=request.POST('apellido_post')
-        correo_post=request.POST('correo_post')
-        telefono_post=request.POST('telefono_post')
-        postulante=postulacion.objects.create(nombre_post=nombre_post,apellido_post=apellido_post,correo_post=correo_post,telefono_post=telefono_post)
+        nombre_post=request.POST.get('nombre_post')
+        numero_post=request.POST.get('numero_post')
+        correo_post=request.POST.get('correo_post')
+        ocupacion_post=request.POST.get('ocupacion_post')
+        postulante=postulacion.objects.create(nombre_post=nombre_post,numero_post=numero_post,correo_post=correo_post,ocupacion_post=ocupacion_post)
         postulante.save()
         mensaje="postulante agregado con exito."
         context={'mensaje':mensaje}
@@ -53,7 +53,7 @@ def delPostulante(request,pk):
         context = {'postulantes':postulantes, 'mensaje':mensaje}
         return render(request,'mi_app/crud.html',context)
 
-def modPostulante(request,pk):
+def findPostulante(request,pk):
     if pk != "":
         postulante=postulacion.objects.get(nombre_post=pk)
         context={'postulante':postulante}
@@ -62,3 +62,20 @@ def modPostulante(request,pk):
         else:
             context={'mensaje':"Error, postulante no encontrado"}
             return render(request,'mi_app/crud.html',context)
+
+def modPostulante(request):
+    if request.method != "POST":
+        return render(request, 'mi_app/modPostulante.html')
+    else:
+        nombre_post=request.POST.get('nombre_post')
+        numero_post=request.POST.get('numero_post')
+        correo_post=request.POST.get('correo_post')
+        ocupacion_post=request.POST.get('ocupacion_post')
+        postulante=postulacion.objects.get(nombre_post=nombre_post)
+        postulante.numero_post=numero_post
+        postulante.correo_post=correo_post
+        postulante.ocupacion_post=ocupacion_post
+        postulante.save()
+        mensaje="postulante modificado con exito."
+        context={'mensaje':mensaje}
+        return render(request,'mi_app/modPostulante.html',context)
