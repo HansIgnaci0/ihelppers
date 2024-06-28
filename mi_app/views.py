@@ -48,7 +48,7 @@ def modPostulante(request,pk):
         postulante=postulacion.objects.get(nombre_post=pk)
         context={'postulante':postulante}
         if postulante:
-            return render(request,'mi_app/modPostulante.html/',context)
+            return render(request,'mi_app/modPostulante.html',context)
         else:
             context={'mensaje':"Error, postulante no encontrado"}
-            return render(request,'mi_app/crud.html/',context)
+            return render(request,'mi_app/crud.html',context)
