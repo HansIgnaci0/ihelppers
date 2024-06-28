@@ -27,6 +27,16 @@ def sesion(request):
 def addPostulante(request):
     if request.method is not "POST":
         return render(request, 'mi_app/addPostulante.html')
+    else:
+        nombre_post=request.POST('nombre_post')
+        apellido_post=request.POST('apellido_post')
+        correo_post=request.POST('correo_post')
+        telefono_post=request.POST('telefono_post')
+        postulante=postulacion.objects.create(nombre_post=nombre_post,apellido_post=apellido_post,correo_post=correo_post,telefono_post=telefono_post)
+        postulante.save()
+        mensaje="postulante agregado con exito."
+        context={'mensaje':mensaje}
+        return render(request,'mi_app/addPostulante.html',context)
 def delPostulante(request,pk):
     context={}
     try:
