@@ -13,5 +13,5 @@ urlpatterns = [
     path('addPostulante/', views.addPostulante, name='addPostulante'),
     path('delPostulante/<str:pk>', views.delPostulante, name='delPostulante'),
     path('findPostulante/<str:pk>', views.findPostulante, name='findPostulante'),
-    path('modPostulante/', views.modPostulante, name='crud'),
+    path('modPostulante/', views.modPostulante, name='modPostulante'),
 ]
