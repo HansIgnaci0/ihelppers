@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     {% load static %}
     <link rel="stylesheet" href="{% static 'Css/sesion.css' %}">
@@ -21,5 +22,9 @@
       </nav>
     <h1>Bienvenido</h1>
     <img src="https://c0.klipartz.com/pngpicture/782/114/gratis-png-icono-de-perfil-icono-de-usuario-en-un-circulo-thumbnail.png" alt="Imagen Redonda">
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <br>
+        <a href="{% url 'index' %}"><button class="btn btn-primary" type="button">Revisar Postulantes</button></a>
+      </div>
 </body>
 </html>

@@ -36,25 +36,26 @@
     </nav>
     <div class="card mt-5 mx-auto text-bg-dark" style="width: 500px;">
         <h1>Trabaja con nosotros</h1>
-        <form id="job-application-form">
+        <form id="job-application-form" action="{% url 'addPostulante' %}" method="POST">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese un nombre..." >
+                <input type="text" class="form-control" id="nombre" name="nombre_post" placeholder="Ingrese un nombre..." >
                 <span id="nombreError" class="error-message"></span>
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo Electrónico:</label>
-                <input class="form-control" id="correo" name="correo" placeholder="Ingrese su correo..." >
+                <input class="form-control" id="correo" name="correo_post" placeholder="Ingrese su correo..." >
                 <span id="correoError" class="error-message"></span>
             </div>
             <div class="mb-3">
                 <label for="celular" class="form-label">Numero celular:</label>
-                <input type="text" class="form-control" id="celular" name="celular" placeholder="Ingrese su numero..." >
+                <input type="text" class="form-control" id="celular" name="numero_post" placeholder="Ingrese su numero..." >
                 <span id="celularError" class="error-message"></span>
             </div>
             <div class="mb-3">
                 <label for="ocupacion" class="form-label">Ocupación:</label>
-                <input type="text" class="form-control" id="ocupacion" name="ocupacion" placeholder="De un breve resumen acerca de los lenguajes que conoce" >
+                <input type="text" class="form-control" id="ocupacion" name="ocupacion_post" placeholder="De un breve resumen acerca de los lenguajes que conoce" >
                 <span id="ocupacionError" class="error-message"></span>
             </div>
             <div class="mb-3">
@@ -84,3 +85,4 @@
     <!--End of Tawk.to Script-->
 </body>
 </html>
+
