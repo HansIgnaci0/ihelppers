@@ -12,7 +12,8 @@
         <form action="{% url 'modPostulante' %}" method="POST">
             {% csrf_token %}
 
-            <pre>Nombre: <input type="mail" name="correo_post" value="{{postulante.nombre_post}}"></pre>
+            <input type="hidden" name="id_post" value="{{postulante.id}}">
+            <pre>Nombre: <input type="text" name="nombre_post" value="{{postulante.nombre_post}}"></pre>
             <pre>Correo: <input type="mail" name="correo_post" value="{{postulante.correo_post}}"></pre>
             <pre>Numero: <input type="text" name="numero_post" value="{{postulante.numero_post}}"></pre>
             <pre>Ocupacion: <input type="text" name="ocupacion_post" value="{{postulante.ocupacion_post}}"></pre>

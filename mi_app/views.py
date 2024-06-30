@@ -40,7 +40,7 @@ def addPostulante(request):
 def delPostulante(request,pk):
     context={}
     try:
-        postulante=postulacion.objects.get(nombre_post=pk)
+        postulante=postulacion.objects.get(id=pk)
 
         postulante.delete()
         mensaje="postulante eliminado con exito."
@@ -55,7 +55,7 @@ def delPostulante(request,pk):
 
 def findPostulante(request,pk):
     if pk != "":
-        postulante=postulacion.objects.get(nombre_post=pk)
+        postulante=postulacion.objects.get(id=pk)
         context={'postulante':postulante}
         if postulante:
             return render(request,'mi_app/modPostulante.html',context)
@@ -67,11 +67,13 @@ def modPostulante(request):
     if request.method != "POST":
         return render(request, 'mi_app/modPostulante.html')
     else:
+        id=request.POST.get('id_post')
         nombre_post=request.POST.get('nombre_post')
         numero_post=request.POST.get('numero_post')
         correo_post=request.POST.get('correo_post')
         ocupacion_post=request.POST.get('ocupacion_post')
         postulante=postulacion()
+        postulante.id=id
         postulante.nombre_post=nombre_post
         postulante.numero_post=numero_post
         postulante.correo_post=correo_post
