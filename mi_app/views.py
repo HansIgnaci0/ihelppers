@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import postulacion
 
 # Create your views here.
@@ -44,14 +44,14 @@ def delPostulante(request,pk):
 
         postulante.delete()
         mensaje="postulante eliminado con exito."
-        postulantes=postulante.objects.all()
+        postulantes=postulacion.objects.all()
         context = {'postulantes':postulantes, 'mensaje':mensaje}
-        return render(request,'mi_app/crud.html',context)
+        return redirect('crud')
     except:
         mensaje="postulante no encontrado"
-        postulantes=postulante.objects.all()
+        postulantes=postulacion.objects.all()
         context = {'postulantes':postulantes, 'mensaje':mensaje}
-        return render(request,'mi_app/crud.html',context)
+        return redirect('crud')
 
 def findPostulante(request,pk):
     if pk != "":
@@ -61,7 +61,7 @@ def findPostulante(request,pk):
             return render(request,'mi_app/modPostulante.html',context)
         else:
             context={'mensaje':"Error, postulante no encontrado"}
-            return render(request,'mi_app/crud.html',context)
+            return redirect('crud')
 
 def modPostulante(request):
     if request.method != "POST":
@@ -81,4 +81,4 @@ def modPostulante(request):
         postulante.save()
         mensaje="postulante modificado con exito."
         context={'mensaje':mensaje}
-        return render(request,'mi_app/crud.html',context)
+        return redirect('crud')
