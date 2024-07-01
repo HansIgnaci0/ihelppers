@@ -5,7 +5,7 @@
     
     {% load static %}
     <link rel="stylesheet" href="{% static 'Css/sesion.css' %}">
-    
+    <title>iHelppers</title>
 </head>
 <header>
     <div class="header d-flex justify-content-between align-items-center p-3">
@@ -25,7 +25,7 @@
     <div class="d-grid gap-2 col-6 mx-auto">
         <br>
         <h1>Listado de postulaciones</h1>
-        {% for postulacion in postulaciones %}
+        
     </div>
         <table>
             <tr>
@@ -35,13 +35,15 @@
                 <th>Ocupacion</th>
                 <th></th>
             </tr>
+        </table>
+        {% for postulacion in postulaciones %}
+        <table>
             <tr>
                 <td>{{postulacion.nombre_post}}
                 <td> {{postulacion.correo_post}}
                 <td> {{postulacion.numero_post}}
                 <td> {{postulacion.ocupacion_post}}
                 <td> <a href="{% url 'findPostulante' pk=postulacion.id%}">Modificar  </a><a href="{% url 'delPostulante' pk=postulacion.id%}">    Eliminar</a>
-                <td> 
             </tr>
             <!-- Add more rows as needed -->
         </table>
