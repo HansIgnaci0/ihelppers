@@ -22,9 +22,16 @@
       </nav>
     <h1>Bienvenido</h1>
     <img src="https://c0.klipartz.com/pngpicture/782/114/gratis-png-icono-de-perfil-icono-de-usuario-en-un-circulo-thumbnail.png" alt="Imagen Redonda">
-    <div class="d-grid gap-2 col-6 mx-auto">
-        <br>
-        <a href="{% url 'index' %}"><button class="btn btn-primary" type="button">Revisar Postulantes</button></a>
-      </div>
-</body>
+    <a href="{% url 'crud' %}">
+      <button class="btn btn-primary" type="button" style="display: block;
+      margin: 0 auto;
+      background-color: #ffffff;
+      color: #000000;
+      border: 2px solid #000000;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;">Revisar Postulantes</button>
+    </a>
+  </body>
 </html>

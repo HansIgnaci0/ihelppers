@@ -1,10 +1,9 @@
 body {
-    background-image: url('https://www.ucatalunya.edu.co/img/blog/los-mejores-lenguajes-de-programacion-en-el-desarrollo-web-y-su-importancia-en-la-era-digital.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    margin: 0;
+  background-image: url('https://www.ucatalunya.edu.co/img/blog/los-mejores-lenguajes-de-programacion-en-el-desarrollo-web-y-su-importancia-en-la-era-digital.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+
 img {
     display: block;
     margin: 0 auto;
@@ -14,41 +13,71 @@ h1 {
     text-align: center;
     padding: 10px;
     text-shadow: 2px 2px 4px #484b4c;
-
 }
 .header {
     padding: 5px;
     background: #080808;
     color: white;
-  }
-  
-  html{
+}
+html{
     height: 100%;
     margin: 0;
 }
-
 .page-container {
     display: flex;
     flex-direction: column;
     min-height: 100%;
 }
-
 .azul {
     color: rgb(18, 208, 255);
-  }
-  
-  nav {
+}
+nav {
     display: flex;
     justify-content: center;
     background-color: #080808;
-  }
-  
-  nav a {
+}
+nav a {
     color: white;
     text-decoration: none;
     padding: 14px 20px;
-  }
-  
-  nav a:hover {
+}
+nav a:hover {
     background-color: #222121;
-  }
+}
+table {
+    width: 80%;
+    margin: 0 auto;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: #ffffffad;
+}
+th, td {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 16px;
+    width: 50%;
+}
+th {
+    background-color: #f2f2f2;
+    color: black;
+    font-size: 18px;
+}
+button{
+    display: block;
+    margin: 0 auto;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+form {
+  background-color: #f2f2f294;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 20%;
+}

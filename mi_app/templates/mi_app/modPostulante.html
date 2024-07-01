@@ -4,18 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Css/sesion.css' %}">
+    <script src="{% static 'js/funcs.js' %}"></script>
 </head>
+<header>
+    <div class="header d-flex justify-content-between align-items-center p-3">
+        <p style="margin-left: 45%; font-size: 30px;"><span class="azul">i</span>Helppers</p>
+          </a>  
+    </div>
+</header>
 <body>
     <div style="text-align: center;">
         {% if postulante %}
         <h2>Modificar postulacion</h2>
-        <form action="{% url 'modPostulante' %}" method="POST">
+        <form action="{% url 'modPostulante' %}" method="POST" onsubmit="return validarNumero()">
             {% csrf_token %}
 
             <input type="hidden" name="id_post" value="{{postulante.id}}">
             <pre>Nombre: <input type="text" name="nombre_post" value="{{postulante.nombre_post}}"></pre>
             <pre>Correo: <input type="mail" name="correo_post" value="{{postulante.correo_post}}"></pre>
-            <pre>Numero: <input type="text" name="numero_post" value="{{postulante.numero_post}}"></pre>
+            <pre>Numero: <input type="text" id="numero_post" name="numero_post" value="{{postulante.numero_post}}"></pre>
             <pre>Ocupacion: <input type="text" name="ocupacion_post" value="{{postulante.ocupacion_post}}"></pre>
 
             <input type="submit" name="opcion" value="Actualizar">

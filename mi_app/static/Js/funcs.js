@@ -99,3 +99,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 var form = document.getElementById('job-application-form');
 form.addEventListener('submit', validarFormulario);
 });
+
+
+        function validarNumero() {
+            var numero = document.getElementById('numero_post').value;
+            if (!Number.isInteger(Number(numero)) || numero === '') {
+                alert('El número debe ser un valor entero.');
+                return false; // Evita que el formulario se envíe
+            }
+            return true; // El formulario se envía
+        }
