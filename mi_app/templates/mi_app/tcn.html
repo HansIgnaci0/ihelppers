@@ -60,10 +60,10 @@
             </div>
             <div class="mb-3">
                 <label for="lenguaje" class="form-label">Lenguaje Principal:</label>
-                <select id="seleccion" name="seleccion">
+                <select id="seleccion" name="lenguaje_post">
                     <option value="" disabled selected hidden>Selecciona una opción</option>
                     {% for lenguaje in lenguajes %}
-                        <option value="{{ lenguaje.lenguaje }}">{{ lenguaje.lenguaje }}</option>
+                        <option value="{{ lenguaje.idlenguaje }}">{{ lenguaje.lenguaje }}</option>
                     {% endfor %}
                 </select>
             </div>

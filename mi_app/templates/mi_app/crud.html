@@ -33,7 +33,8 @@
                 <th>Correo</th>
                 <th>Numero</th>
                 <th>Ocupacion</th>
-                <th></th>
+                <th>Lenguaje P.</th>
+                <th>Opciones</th>
             </tr>
         </table>
         {% for postulacion in postulaciones %}
@@ -43,9 +44,10 @@
                 <td> {{postulacion.correo_post}}
                 <td> {{postulacion.numero_post}}
                 <td> {{postulacion.ocupacion_post}}
+                <td> {{postulacion.id_lenguaje.lenguaje}}
                 <td> <a href="{% url 'findPostulante' pk=postulacion.id%}">Modificar  </a><a href="{% url 'delPostulante' pk=postulacion.id%}">    Eliminar</a>
             </tr>
-            <!-- Add more rows as needed -->
+
         </table>
         {% endfor%}
     

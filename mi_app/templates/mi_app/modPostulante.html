@@ -29,6 +29,14 @@
             <pre>Correo: <input type="mail" name="correo_post" value="{{postulante.correo_post}}"></pre>
             <pre>Numero: <input type="text" id="numero_post" name="numero_post" value="{{postulante.numero_post}}"></pre>
             <pre>Ocupacion: <input type="text" name="ocupacion_post" value="{{postulante.ocupacion_post}}"></pre>
+            <pre>Lenguaje: <select name="lenguaje_post">
+                {% for lenguaje in lenguajes %}
+                    {% if lenguaje.idlenguaje == postulante.id_lenguaje %}
+                        <option value="{{lenguaje.idlenguaje}}" selected>{{lenguaje.lenguaje}}</option>
+                    {% else %}
+                        <option value="{{lenguaje.idlenguaje}}">{{lenguaje.lenguaje}}</option>
+                    {% endif %}
+                {% endfor %}
 
             <input type="submit" name="opcion" value="Actualizar">
         </form> <br><br>

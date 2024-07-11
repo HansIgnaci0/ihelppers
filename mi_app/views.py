@@ -10,7 +10,8 @@ def index(request):
     return render(request, 'mi_app/index.html',context)
 def crud(request):
     postulaciones=postulacion.objects.all()
-    context={"postulaciones":postulaciones}
+    lenguajes=lenguaje.objects.all()
+    context={"postulaciones":postulaciones, "lenguajes":lenguajes}
     return render(request, 'mi_app/crud.html',context)
 def home(request):
     return render(request, 'mi_app/principal.html')
@@ -35,7 +36,10 @@ def addPostulante(request):
         numero_post=request.POST.get('numero_post')
         correo_post=request.POST.get('correo_post')
         ocupacion_post=request.POST.get('ocupacion_post')
-        postulante=postulacion.objects.create(nombre_post=nombre_post,numero_post=numero_post,correo_post=correo_post,ocupacion_post=ocupacion_post)
+        lenguaje_post=request.POST.get('lenguaje_post')
+
+        objLenguaje=lenguaje.objects.get(idlenguaje=lenguaje_post)
+        postulante=postulacion.objects.create(nombre_post=nombre_post,numero_post=numero_post,correo_post=correo_post,ocupacion_post=ocupacion_post,id_lenguaje=objLenguaje)
         postulante.save()
         mensaje="postulante agregado con exito."
         context={'mensaje':mensaje}
@@ -59,7 +63,8 @@ def delPostulante(request,pk):
 def findPostulante(request,pk):
     if pk != "":
         postulante=postulacion.objects.get(id=pk)
-        context={'postulante':postulante}
+        lenguajes=lenguaje.objects.all()
+        context={'postulante':postulante, 'lenguajes':lenguajes}
         if postulante:
             return render(request,'mi_app/modPostulante.html',context)
         else:
@@ -75,12 +80,16 @@ def modPostulante(request):
         numero_post=request.POST.get('numero_post')
         correo_post=request.POST.get('correo_post')
         ocupacion_post=request.POST.get('ocupacion_post')
+        lenguaje_post=request.POST.get('lenguaje_post')
+
+        objLenguaje=lenguaje.objects.get(idlenguaje=lenguaje_post)
         postulante=postulacion()
         postulante.id=id
         postulante.nombre_post=nombre_post
         postulante.numero_post=numero_post
         postulante.correo_post=correo_post
         postulante.ocupacion_post=ocupacion_post
+        postulante.id_lenguaje=objLenguaje
         postulante.save()
         mensaje="postulante modificado con exito."
         context={'mensaje':mensaje}
