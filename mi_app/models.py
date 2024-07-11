@@ -7,3 +7,6 @@ class postulacion(models.Model):
     correo_post = models.TextField(max_length=50)
     numero_post = models.IntegerField()
     ocupacion_post = models.TextField(max_length=200)
+
+class lenguaje(models.Model):
+    lenguaje = models.TextField(max_length=50)

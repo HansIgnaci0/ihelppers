@@ -59,9 +59,13 @@
                 <span id="ocupacionError" class="error-message"></span>
             </div>
             <div class="mb-3">
-                <label for="portfolio" class="form-label">Portfolio:</label>
-                <input type="file" class="form-control" id="portfolio" name="portfolio" accept=".pdf,.doc,.docx,.txt">
-                <small class="form-text text-muted">Suba un archivo PDF o Word que contenga su portfolio/certificado(s).</small>
+                <label for="lenguaje" class="form-label">Lenguaje Principal:</label>
+                <select id="seleccion" name="seleccion">
+                    <option value="" disabled selected hidden>Selecciona una opción</option>
+                    {% for lenguaje in lenguajes %}
+                        <option value="{{ lenguaje.lenguaje }}">{{ lenguaje.lenguaje }}</option>
+                    {% endfor %}
+                </select>
             </div>
             <button id="subir" class="btn btn-primary" type="submit">Enviar Solicitud</button>
         </form>

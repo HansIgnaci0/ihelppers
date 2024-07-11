@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import postulacion
+from .models import lenguaje
 
 # Create your views here.
 
@@ -18,7 +19,9 @@ def cotizar(request):
 def equipo(request):
     return render(request, 'mi_app/qs.html')
 def trabaja_con_nosotros(request):
-    return render(request, 'mi_app/tcn.html')
+    lenguajes=lenguaje.objects.all()
+    context={"lenguajes":lenguajes}
+    return render(request, 'mi_app/tcn.html', context)
 def login(request):
     return render(request, 'mi_app/login.html')
 def sesion(request):
